@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Interactive.Data;
 using Interactive.Extensions;
 using Interactive.Models.EntityModels;
+using Interactive.Services;
 using Interactive.Services.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -18,30 +19,36 @@ namespace Interactive.Controllers
     public class PostsController : Controller
     {
         private InteractiveContext db = new InteractiveContext();
+        private PostsService service;
+
+        public PostsController()
+        {
+            this.service = new PostsService(db);
+        }
 
         // GET: Posts
         public ActionResult Index()
         {
             //string message = TempData["message"] as string;
             //ViewBag.message = message;
-            var kur = db.Posts.Include(p => p.Author).ToList();
-            return View(kur);
+            var posts = db.Posts.Include(p => p.Author).ToList();
+            return View(posts);
         }
 
         // GET: Posts/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            var request = this.service.CheckId(id);
+            if (request != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return request;
             }
 
-            Post post = db.Posts.Find(id);
+            Post post = this.service.GetPost(id);
             if (post == null)
             {
                 return HttpNotFound();
             }
-
             //var currentAuthorName = post.Author.UserName;
             //ViewBag.currentAuthor = currentAuthorName;
 
@@ -89,7 +96,7 @@ namespace Interactive.Controllers
 
                 if (user != null)
                 {
-                    post.Author = db.Users.Where(u => u.UserName == user.UserName).FirstOrDefault();
+                    post.Author = this.service.FindUserByUsername(user.UserName);
                     post.Author.Name = user.Name;
                 }
                 

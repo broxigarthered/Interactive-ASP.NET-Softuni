@@ -40,3 +40,47 @@ C:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Ser
 C:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Services\obj\Debug\Interactive.Services.dll
 C:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Services\obj\Debug\Interactive.Services.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Services.dll.config
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Services.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Services.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\EntityFramework.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Data.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Models.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Owin.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Razor.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Data.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Interactive.Models.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\EntityFramework.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Mvc.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Razor.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\obj\Debug\Interactive.Services.csprojResolveAssemblyReference.cache
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\obj\Debug\Interactive.Services.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\obj\Debug\Interactive.Services.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Helpers.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Helpers.xml

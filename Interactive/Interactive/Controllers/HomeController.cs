@@ -1,13 +1,23 @@
-﻿using System.Data.Entity;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Interactive.Data;
+using Interactive.Models.EntityModels;
+using Interactive.Services;
 
 namespace Interactive.Controllers
 {
     public class HomeController : Controller
     {
         InteractiveContext db = new InteractiveContext();
+        private HomeService service;
+
+        public HomeController()
+        {
+            this.service = new HomeService(db);
+        }
 
         public ActionResult Index(int page = 0)
         {
@@ -15,21 +25,16 @@ namespace Interactive.Controllers
 
             var count = this.db.Posts.Count();
 
-            var posts = this.db.Posts.Include(p => p.Author)
-                .OrderByDescending(p => p.Date)
-                .Skip(page * PagePostsCount)
-                .Take(PagePostsCount).ToList();
+            IEnumerable<Post> posts = this.service.GetPostsFromDataBase(page);
 
             this.ViewBag.MaxPage = (count / PagePostsCount) - (count % PagePostsCount == 0 ? 1 : 0);
-
             this.ViewBag.Page = page;
 
-            var postsForSideBars = db.Posts.Include(p => p.Author)
-                .OrderByDescending(p => p.Date)
-                .Take(5);
+            IEnumerable<Post> postsForSideBars = this.service.GetPostsForSidebars();
+
             ViewBag.SidebarPosts = postsForSideBars.ToList();
 
-            return View(posts);
+            return View(posts.ToList());
         }
 
         public ActionResult About()
