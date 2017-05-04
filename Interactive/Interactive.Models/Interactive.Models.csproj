@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityModels\ApplicationUser.cs" />
+    <Compile Include="EntityModels\Comment.cs" />
     <Compile Include="EntityModels\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />

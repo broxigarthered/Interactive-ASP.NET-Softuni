@@ -27,6 +27,7 @@ namespace Interactive.Data
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
 
             public virtual DbSet<Post> Posts { get; set; }
+            public virtual DbSet<Comment> Comments { get; set; }
 
         public static InteractiveContext Create()
         {

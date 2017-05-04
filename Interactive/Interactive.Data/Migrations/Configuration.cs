@@ -10,6 +10,7 @@ namespace Interactive.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Interactive.Data.InteractiveContext";
         }
 

@@ -90,7 +90,7 @@ namespace Interactive.Controllers
                 if (user != null)
                 {
                     post.Author = db.Users.Where(u => u.UserName == user.UserName).FirstOrDefault();
-                    post.Author.FullName = user.FullName;
+                    post.Author.Name = user.Name;
                 }
                 
                 db.Posts.Add(post);

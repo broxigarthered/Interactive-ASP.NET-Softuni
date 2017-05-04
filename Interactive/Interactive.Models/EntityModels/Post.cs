@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,6 +10,7 @@ namespace Interactive.Models.EntityModels
         public Post()
         {
             this.Date = DateTime.Now;
+            this.Comments = new HashSet<Comment>();
         }
 
         [Key]
@@ -28,5 +30,7 @@ namespace Interactive.Models.EntityModels
         public virtual ApplicationUser Author { get; set; }
 
         public string Author_Id { get; set; }
+
+        public virtual IEnumerable<Comment> Comments { get; set; }
     }
 }

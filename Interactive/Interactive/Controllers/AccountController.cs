@@ -154,7 +154,9 @@ namespace Interactive.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { FullName = model.Name, Email = model.Email};
+                var user = new ApplicationUser { Email = model.Email};
+                user.Name = model.Name;
+                user.UserName = model.Name;
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
