@@ -1,3 +1,6 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace Interactive.Data.Migrations
 {
     using System;
@@ -16,18 +19,27 @@ namespace Interactive.Data.Migrations
 
         protected override void Seed(Interactive.Data.InteractiveContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            if (!context.Roles.Any(role => role.Name == "RegisteredUser"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole("RegisteredUser");
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(role => role.Name == "admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole("admin");
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(role => role.Name == "BlogAuthor"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole("BlogAuthor");
+                manager.Create(role);
+            }
         }
     }
 }
