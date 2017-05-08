@@ -28,3 +28,33 @@ c:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Mod
 c:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.Razor.xml
 c:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Models\obj\Debug\Interactive.Models.dll
 c:\Users\NIKII\Documents\Visual Studio 2015\Projects\Interactive\Interactive.Models\obj\Debug\Interactive.Models.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Interactive.Models.dll.config
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Interactive.Models.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Interactive.Models.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\EntityFramework.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.Owin.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Owin.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.Helpers.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.Mvc.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.Razor.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\EntityFramework.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\Microsoft.Owin.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.Helpers.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.Mvc.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.Razor.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\obj\Debug\Interactive.Models.csprojResolveAssemblyReference.cache
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\obj\Debug\Interactive.Models.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Models\obj\Debug\Interactive.Models.pdb

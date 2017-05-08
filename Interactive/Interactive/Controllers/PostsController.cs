@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Interactive.Data;
-using Interactive.Extensions;
+using Interactive.Services.Extensions;
 using Interactive.Models.EntityModels;
+using Interactive.Models.ViewModels;
 using Interactive.Services;
 using Interactive.Services.Identity;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace Interactive.Controllers
@@ -29,28 +27,25 @@ namespace Interactive.Controllers
         // GET: Posts
         public ActionResult Index()
         {
-            //string message = TempData["message"] as string;
-            //ViewBag.message = message;
-            var posts = db.Posts.Include(p => p.Author).ToList();
+            var posts = this.service.GetAllPosts();
             return View(posts);
         }
 
         // GET: Posts/Details/5
         public ActionResult Details(int? id)
         {
-            var request = this.service.CheckId(id);
+            var request = this.service.GetHttpRequest(id);
+
             if (request != null)
             {
                 return request;
             }
 
-            Post post = this.service.GetPost(id);
+            Post post = this.service.GetPostById(id);
             if (post == null)
             {
                 return HttpNotFound();
             }
-            //var currentAuthorName = post.Author.UserName;
-            //ViewBag.currentAuthor = currentAuthorName;
 
             return View(post);
         }
@@ -83,30 +78,29 @@ namespace Interactive.Controllers
         }
 
         // POST: Posts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Body")] Post post)
+        public ActionResult Create([Bind(Include = "ID,Title,Body")] PostViewModel postViewModel)
         {
+
             if (ModelState.IsValid)
             {
-                ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+                ApplicationUser user = this.GetUser();
+                var userToSet = db.Users.Where(u => u.UserName == user.UserName).FirstOrDefault();
 
                 if (user != null)
                 {
-                    post.Author = this.service.FindUserByUsername(user.UserName);
-                    post.Author.Name = user.Name;
+                    this.service.AddNewPost(postViewModel, userToSet);
                 }
-                
-                db.Posts.Add(post);
+
                 this.AddNotification("Post created successfully.", NotificationType.INFO);
-                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
-            return View(post);
+            return View(postViewModel);
         }
 
         // GET: Posts/Edit/5
@@ -114,22 +108,10 @@ namespace Interactive.Controllers
         //[Authorize(Roles = "Administrators")]
         public ActionResult Edit(int? id)
         {
-            var userStore = new UserStore<ApplicationUser>(db);
-            var userManager = new UserManager<ApplicationUser>(userStore);
 
-            var roleStore = new RoleStore<IdentityRole>(db);
-            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            ApplicationUser user = this.GetUser();
 
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Post post = db.Posts.Find(id);
-            if (post == null)
-            {
-                return HttpNotFound();
-            }
+            Post post = service.GetPostById(id);
 
             if (user == null)
             {
@@ -138,17 +120,16 @@ namespace Interactive.Controllers
                 return RedirectToAction("Index");
             }
 
-            // if the author of the post is the one currently logged or the admin is logged - post editing is enabled
-            if (user.Id == post.Author_Id || userManager.IsInRole(user.Id, "Administrators"))
+            bool userIsAdmin = this.service.CheckUserAdmin(user.Id, post.Author_Id);
+
+            if (userIsAdmin)
             {
-                var authors = db.Users.ToList();
+                IEnumerable<ApplicationUser> authors = this.service.GetAllAuthors();
                 ViewBag.Authors = authors;
 
                 return View(post);
             }
 
-            // if not, we create temp data message which then will be printed on the post index
-            // TempData["message"] = "You're not allowed to edit this post";
             this.AddNotification("You cannot edit that post.", NotificationType.INFO);
 
             return RedirectToAction("Index");
@@ -162,30 +143,21 @@ namespace Interactive.Controllers
         // [Authorize(Roles = "Administrators")]
         public ActionResult Edit([Bind(Include = "ID,Title,Body,Date,Author_ID")] Post post)
         {
-            InteractiveContext userscontext = new InteractiveContext();
-            var userStore = new UserStore<ApplicationUser>(userscontext);
-            var userManager = new UserManager<ApplicationUser>(userStore);
+            ApplicationUser user = this.GetUser();
 
-            var roleStore = new RoleStore<IdentityRole>(userscontext);
-            var roleManager = new RoleManager<IdentityRole>(roleStore);
+            bool postEditted = this.service.EditPost(user, post, ModelState.IsValid);
 
-            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-
-            if (user.Id == post.Author_Id || userManager.IsInRole(user.Id, "Administrators"))
+            if (postEditted)
             {
-                if (ModelState.IsValid)
-                {
-                    db.Entry(post).State = EntityState.Modified;
-                    this.AddNotification("Post edited successfully.", NotificationType.INFO);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                var authors = db.Users.ToList();
+                this.AddNotification("Post edited successfully.", NotificationType.INFO);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                IEnumerable<ApplicationUser> authors = this.service.GetAllAuthors();
                 ViewBag.Authors = authors;
                 return View(post);
-
             }
-            return Redirect("Index");
         }
 
         // GET: Posts/Delete/5
@@ -196,11 +168,9 @@ namespace Interactive.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
-            if (post == null)
-            {
-                return HttpNotFound();
-            }
+
+            Post post = this.service.GetPostById(id);
+
             return View(post);
         }
 
@@ -210,19 +180,22 @@ namespace Interactive.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Post post = db.Posts.Find(id);
-            db.Posts.Remove(post);
-            db.SaveChanges();
+            this.service.DeletePost(id);
             return RedirectToAction("Index");
         }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        public ApplicationUser GetUser()
+        {
+            return System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+        }
     }
 }
