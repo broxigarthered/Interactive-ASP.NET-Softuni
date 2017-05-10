@@ -246,3 +246,9 @@ C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\Microsoft
 C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\obj\Debug\Interactive.csprojResolveAssemblyReference.cache
 C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\obj\Debug\Interactive.dll
 C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\obj\Debug\Interactive.pdb
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\AutoMapper.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\AutoMapper.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\Ninject.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\Ninject.Web.Common.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\Ninject.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive\bin\Ninject.Web.Common.xml

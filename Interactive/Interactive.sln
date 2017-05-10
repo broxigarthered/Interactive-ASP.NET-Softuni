@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactive.Models", "Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactive.Services", "Interactive.Services\Interactive.Services.csproj", "{96D5C417-379B-48B4-91A2-F292C99434A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactive.Tests", "Interactive.Tests\Interactive.Tests.csproj", "{1817F0EE-5D34-4E87-AEF6-EF7A69F05071}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{96D5C417-379B-48B4-91A2-F292C99434A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96D5C417-379B-48B4-91A2-F292C99434A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96D5C417-379B-48B4-91A2-F292C99434A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1817F0EE-5D34-4E87-AEF6-EF7A69F05071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1817F0EE-5D34-4E87-AEF6-EF7A69F05071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1817F0EE-5D34-4E87-AEF6-EF7A69F05071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1817F0EE-5D34-4E87-AEF6-EF7A69F05071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -59,12 +59,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IInteractiveContext.cs" />
+    <Compile Include="Contracts\IService.cs" />
     <Compile Include="InteractiveContext.cs" />
     <Compile Include="Migrations\201704301159246_initial.cs" />
     <Compile Include="Migrations\201704301159246_initial.Designer.cs">
       <DependentUpon>201704301159246_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

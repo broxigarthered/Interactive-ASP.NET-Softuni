@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using Interactive.Data;
 using Interactive.Services.Extensions;
 using Interactive.Models.EntityModels;

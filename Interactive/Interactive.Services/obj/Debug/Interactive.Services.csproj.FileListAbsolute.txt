@@ -84,3 +84,5 @@ C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\obj\
 C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\obj\Debug\Interactive.Services.pdb
 C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Helpers.dll
 C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\System.Web.Helpers.xml
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\AutoMapper.dll
+C:\Users\NIKII\Desktop\Interactive Project\Interactive\Interactive.Services\bin\Debug\AutoMapper.xml
